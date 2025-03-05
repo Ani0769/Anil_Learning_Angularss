@@ -1,11 +1,4 @@
 <div class="container">
   <h2>Best Perfumes</h2>
-  <div *ngFor="let perfumes of perfumesList" class="perfumeslist">
-    <p>ID: {{ perfumes.id }}</p>
-    <p>Perfumes: {{ perfumes.name }}</p>
-    <p>Brand: {{ perfumes.brand }}</p>
-    <p>Price: {{ perfumes.price }}</p>
-    <p>Description: {{perfumes.description }}</p>
-    <p>Availability: {{ perfumes.available ? 'In Stock' : 'Out of Stock' }}</p> <!-- ternary operator to display stock status -->
-  </div>
+  <app-perfumes-list> </app-perfumes-list>
 </div>
