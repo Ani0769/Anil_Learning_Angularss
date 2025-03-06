@@ -1,0 +1,12 @@
+
+
+<div *ngIf="perfumes"  class="perfume-detail">
+  <h1>Perfume Details</h1>
+
+  <h2>{{ perfumes.id }}. <strong>Name:</strong> {{ perfumes.name }}</h2>
+  <p><strong>Brand:</strong> {{ perfumes.brand }}</p>
+  <p><strong>Price:</strong> {{ perfumes.price}}</p>
+  <p><strong>Description:</strong> {{ perfumes.description }}</p>
+  <p><strong>Availability:</strong> {{ perfumes.available ? 'In Stock' : 'Out of Stock' }}</p>
+
+</div>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Perfumes } from "./Shared/perfumes";
 import {JsonPipe, NgForOf} from "@angular/common";
-import {PerfumesListComponent} from './perfume-list/perfume-list.component' ;
+import {PerfumesListComponent} from './perfumes-list/perfumes-list.component' ;
 
 @Component({
   selector: 'app-root',

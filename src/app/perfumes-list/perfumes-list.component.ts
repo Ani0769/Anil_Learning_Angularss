@@ -3,19 +3,16 @@ import {Perfumes} from "../Shared/perfumes";
 
 import {PerfumesListItemComponent} from "../perfumes-list-item/perfumes-list-item.component";
 import {NgForOf} from "@angular/common";
-@Component({
+ @Component({
+  imports: [PerfumesListItemComponent, NgForOf],
   selector: 'app-perfumes-list',
   standalone: true,
-  imports: [
-
-    PerfumesListItemComponent,
-    NgForOf
-  ],
-  templateUrl: './perfumes-list.component.html',
-  styleUrl: './perfumes-list.component.css'
+  styleUrl: './perfumes-list.component.css',
+  templateUrl: './perfumes-list.component.html'
 })
-export class PerfumesListComponent
-perfumesList: Perfumes[] =
+
+export class PerfumesListComponent{
+  perfumesList: Perfumes[] =
   [
     {id: 1, name: "Oud wood", brand: "Tom ford", price: 400, description: "woody and strong", available: true},
     {id: 2, name: "Le Male", brand: "Jean Paul Gaultier", price: 200, description: "mild and seduction", available: true},
