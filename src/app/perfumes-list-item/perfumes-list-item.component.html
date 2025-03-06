@@ -1,6 +1,6 @@
 
 
-<div *ngIf="perfumes"  class="perfume-detail">
+<div *ngIf="perfumes"  [ngStyle]="{'background-color': index % 2 === 0 ? 'grey' : 'lightyellow'}" class="perfume-detail">
   <h1>Perfume Details</h1>
 
   <h2>{{ perfumes.id }}. <strong>Name:</strong> {{ perfumes.name }}</h2>
