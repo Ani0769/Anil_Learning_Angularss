@@ -3,7 +3,8 @@ import {Perfumes} from "../Shared/perfumes";
 
 import {PerfumesListItemComponent} from "../perfumes-list-item/perfumes-list-item.component";
 import {NgForOf} from "@angular/common";
- @Component({
+import {PerfumeService} from "../service/perfume.service";
+@Component({
   imports: [PerfumesListItemComponent, NgForOf],
   selector: 'app-perfumes-list',
   standalone: true,
@@ -12,5 +13,10 @@ import {NgForOf} from "@angular/common";
 })
 
 export class PerfumesListComponent{
+
+  perfumes: Perfumes[] = [];
+
+  constructor(private PerfumesService: PerfumeService) {}
+
 
 }
