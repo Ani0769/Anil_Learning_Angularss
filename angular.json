@@ -26,6 +26,7 @@
                 "input": "public"
               }
             ],
+            "src/pictures"
             "styles": [
               "src/styles.css"
             ],

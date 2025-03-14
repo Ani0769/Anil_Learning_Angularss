@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {NgIf, NgStyle} from "@angular/common";
+import {NgIf, NgOptimizedImage, NgStyle} from "@angular/common";
 
 
 @Component({
@@ -7,7 +7,8 @@ import {NgIf, NgStyle} from "@angular/common";
   standalone: true,
   imports: [
     NgIf,
-    NgStyle
+    NgStyle,
+    NgOptimizedImage
   ],
   templateUrl: './perfumes-list-item.component.html',
   styleUrl: './perfumes-list-item.component.css'

@@ -1,5 +1,11 @@
 <div class="container">
   <h2>Best Perfumes</h2>
   <app-perfumes-list-item [perfumes]="perfume" ></app-perfumes-list-item>
-  <app-perfumes-list> </app-perfumes-list>
+  <router-outlet></router-outlet>
+</div>
+<div class="nav-bar">
+  <nav>
+    <h4> <a routerLink="/perfumes" routerLinkActive="active">Perfumes List </a> </h4>
+    <h4> <a routerLink="/modify-student" routerLinkActive="active">Modify Perfumes</a> </h4>
+  </nav>
 </div>
