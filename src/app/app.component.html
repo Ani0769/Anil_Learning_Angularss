@@ -1,5 +1,13 @@
 <div class="container">
+  <nav>
+    <ul>
+      <li><a routerLink="perfumes">Home</a></li>
+      <li><a routerLink="modify-product">Modify List Item</a></li>
+      <li><a routerLink ='**'>page not found</a></li>
+    </ul>
+  </nav>
+
   <h2>Best Perfumes</h2>
-  <app-perfumes-list-item [perfumes]="perfume" ></app-perfumes-list-item>
-  <app-perfumes-list> </app-perfumes-list>
+  <router-outlet></router-outlet>
+
 </div>
