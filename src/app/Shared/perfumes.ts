@@ -5,4 +5,6 @@ export interface Perfumes {
   price: number;
   description:string;
   available: boolean;
+  imgSrc:string;
+
 }
