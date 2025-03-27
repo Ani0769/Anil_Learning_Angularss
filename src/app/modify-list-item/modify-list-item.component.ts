@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-modify-list-item',
   imports: [],
   templateUrl: './modify-list-item.component.html',
+  standalone: true,
   styleUrl: './modify-list-item.component.css'
 })
 export class ModifyListItemComponent {
