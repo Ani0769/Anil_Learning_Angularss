@@ -15,14 +15,14 @@ import {PerfumeService} from "./service/perfume.service";
 })
 export class AppComponent {
   title= 'Royal Perfumes';
-  perfume?: Perfumes;
+  selectedPerfume?: Perfumes;
 
   constructor(private PerfumesService:PerfumeService ) {}
 
   ngOnInit(): void {
 
     this.PerfumesService.getPerfumeById(3).subscribe((data) => {
-      this.perfume = data;
+      this.selectedPerfume = data;
     });
   }
 

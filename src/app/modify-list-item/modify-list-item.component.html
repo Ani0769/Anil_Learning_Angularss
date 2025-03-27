@@ -1,1 +1,56 @@
-<p>modify-list-item works!</p>
+<form [formGroup]="perfumeForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="id">ID</label>
+    <input id="id" formControlName="id" type="number" [readonly]="currentPerfumeId !== null">
+    <div *ngIf="perfumeForm.controls['id'].invalid && perfumeForm.controls['id'].touched">
+      <small class="error">ID is required and must be a valid number.</small>
+    </div>
+  </div>
+
+
+  <div>
+    <label for="company">Company</label>
+    <input id="company" formControlName="company" type="text">
+    <div *ngIf="perfumeForm.controls['company'].invalid && perfumeForm.controls['company'].touched">
+      <small class="error">Company is required.</small>
+    </div>
+  </div>
+
+
+  <div>
+    <label for="region">Region</label>
+    <input id="region" formControlName="region" type="text">
+  </div>
+
+
+  <div>
+    <label for="color">Color</label>
+    <input id="color" formControlName="color" type="text">
+  </div>
+
+
+  <div>
+    <label for="type">Type</label>
+    <input id="type" formControlName="type" type="text">
+  </div>
+
+  <div>
+    <label for="available">Availability</label>
+    <input id="available" formControlName="available" type="checkbox">
+  </div>
+
+
+  <div>
+    <label for="imgSrc">Image Source URL</label>
+    <input id="imgSrc" formControlName="imgSrc" type="text">
+  </div>
+
+
+  <button type="submit" [disabled]="perfumeForm.invalid || currentPerfumeId === null">
+    {{ currentPerfumeId ? 'Update' : 'Add' }} Watch
+  </button>
+
+
+  <button type="button" (click)="resetForm()">Reset</button>
+</form>

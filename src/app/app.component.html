@@ -1,15 +1,17 @@
 <div class="container">
   <h1>Best Perfumes</h1>
-  <h2> Perfume Details</h2>
+
+
+
 
 
   <nav>
 
-    <a routerLink="perfumes">Home</a>
-    <a routerLink="modify-product">Modify List Item</a>
-    <a routerLink ='**'>page not found</a>
-
+    <a routerLink="perfumes-list">Home</a>&nbsp;&nbsp;&nbsp;
+    <a routerLink="modify-list-item">Modify List Item</a>
+    <h2> Perfume Details</h2>
   </nav>
+  <app-perfumes-list-item *ngIf="selectedPerfume" [perfumes] ="selectedPerfume"></app-perfumes-list-item>
 </div>
 
 <router-outlet></router-outlet>

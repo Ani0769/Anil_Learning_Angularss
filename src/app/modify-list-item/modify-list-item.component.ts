@@ -1,28 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PerfumeService } from '../service/perfume.service';  // Updated to your actual service
-import { Perfumes } from '../Shared/perfumes';  // Your Perfume model
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { PerfumeService } from '../service/perfume.service';
+import { Perfumes } from '../Shared/perfumes';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-modify-list-item',
   templateUrl: './modify-list-item.component.html',
   standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    NgIf
+  ],
   styleUrls: ['./modify-list-item.component.css']
 })
 export class ModifyListItemComponent implements OnInit {
-  perfumeForm: FormGroup;  // Renamed from watchForm to perfumeForm
-  currentPerfumeId: number | null = null;  // Renamed from currentWatchId to currentPerfumeId
+  perfumeForm: FormGroup;
+  currentPerfumeId: number | null = null;
 
   constructor(
     private fb: FormBuilder,
-    private perfumeService: PerfumeService,  // Renamed from watchService to perfumeService
+    private perfumeService: PerfumeService,
     private router: Router,
     private route: ActivatedRoute
   ) {
     this.perfumeForm = this.fb.group({
       id: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      name: ['', [Validators.required]],  // Assuming you have a name for perfume
+      name: ['', [Validators.required]],
       brand: ['', [Validators.required]],
       price: ['', [Validators.required]],
       description: ['', [Validators.required]],
@@ -43,7 +48,7 @@ export class ModifyListItemComponent implements OnInit {
     if (this.currentPerfumeId !== null) {
       this.perfumeService.getPerfumeById(this.currentPerfumeId).subscribe((perfume: Perfumes | undefined) => {
         if (perfume) {
-          this.perfumeForm.patchValue(perfume);  // Patches the form with perfume data
+          this.perfumeForm.patchValue(perfume);
         } else {
           alert('Perfume not found!');
         }
@@ -61,7 +66,7 @@ export class ModifyListItemComponent implements OnInit {
           this.router.navigate(['/perfumes-list']);
         });
       } else {
-        // Update the existing perfume
+
         this.perfumeService.updatePerfume(perfumeData).subscribe(() => {
           this.router.navigate(['/perfumes-list']);
         });
