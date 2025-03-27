@@ -1,3 +1,6 @@
 <div *ngFor="let perfume of perfumes; let i = index">
   <app-perfumes-list-item [perfumes]="perfume" [index]="i"></app-perfumes-list-item>
+
+  <button (click)="editperfumes(perfume.id)">Edit</button>
+  <button (click)="deleteperfumes(perfume.id)">Delete</button>
 </div>

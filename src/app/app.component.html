@@ -1,17 +1,17 @@
 <div class="container">
   <h1>Best Perfumes</h1>
   <h2> Perfume Details</h2>
-  <app-perfumes-list-item [perfumes]="perfume" ></app-perfumes-list-item>
 
-  <router-outlet></router-outlet>
-</div>
-<div class="nav-bar">
+
   <nav>
-    <ul>
-      <li><a routerLink="perfumes">Home</a></li>
-      <li><a routerLink="modify-product">Modify List Item</a></li>
-      <li><a routerLink ='**'>page not found</a></li>
-    </ul>
-  </nav>
 
+    <a routerLink="perfumes">Home</a>
+    <a routerLink="modify-product">Modify List Item</a>
+    <a routerLink ='**'>page not found</a>
+
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
+<div class="nav-bar">
 </div>

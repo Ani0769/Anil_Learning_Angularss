@@ -13,9 +13,9 @@ import {PerfumesListItemComponent} from './app/perfumes-list-item/perfumes-list-
 const routes: Routes = [
   {path:'', redirectTo: '/perfumes', pathMatch: 'full'},
   { path: 'perfumes', component: PerfumesListComponent },
-  {path: 'modify-product', component: ModifyListItemComponent},
+  {path: 'modify-list-item', component: ModifyListItemComponent},
   {path: 'perfumes/:id' , component: PerfumesListItemComponent},
-  {path: '**', component:PageNotFoundComponent}
+  {path: '**', component:PerfumesListComponent}
 ];
 bootstrapApplication(AppComponent, {
   providers: [provideRouter(routes)]

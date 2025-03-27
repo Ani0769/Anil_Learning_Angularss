@@ -31,7 +31,7 @@ export class PerfumeService {
     return of(perfumesList);
   }
 
-  deletePerfumeById(id: number): Observable<Perfumes | undefined> {
+  removePerfumeById(id: number): Observable<Perfumes | undefined> {
     const index = perfumesList.findIndex(item => item.id === id);
     if (index !== -1) {
       const removedItem = perfumesList.splice(index, 1)[0];
