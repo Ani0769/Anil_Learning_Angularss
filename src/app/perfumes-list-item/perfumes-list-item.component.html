@@ -15,6 +15,7 @@
   <p><strong>Status:</strong> {{ perfumes.available | availability }}</p>
 
 
+
   <p *ngIf="perfumes.stock">
     <strong>Stock:</strong> {{ perfumes.stock | percent }} of the required inventory
   </p>
