@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {NgIf, NgOptimizedImage, NgStyle} from "@angular/common";
+import {CurrencyPipe, NgIf, NgOptimizedImage, NgStyle, PercentPipe, SlicePipe, UpperCasePipe} from "@angular/common";
 
 
 @Component({
@@ -8,7 +8,11 @@ import {NgIf, NgOptimizedImage, NgStyle} from "@angular/common";
   imports: [
     NgIf,
     NgStyle,
-    NgOptimizedImage
+    NgOptimizedImage,
+    CurrencyPipe,
+    UpperCasePipe,
+    PercentPipe,
+    SlicePipe
   ],
   templateUrl: './perfumes-list-item.component.html',
   styleUrl: './perfumes-list-item.component.css'

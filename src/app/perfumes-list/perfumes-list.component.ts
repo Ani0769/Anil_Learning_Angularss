@@ -5,6 +5,7 @@ import { NgForOf } from "@angular/common";
 import { PerfumeService } from "../service/perfume.service";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
+
 @Component({
   imports: [PerfumesListItemComponent, NgForOf],
   selector: 'app-perfumes-list',
