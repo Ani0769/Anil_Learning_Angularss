@@ -1,6 +1,9 @@
-<div *ngFor="let perfume of perfumes; let i = index">
-  <app-perfumes-list-item [perfumes]="perfume" [index]="i"></app-perfumes-list-item>
-
-  <button (click)="editPerfume(perfume)">Edit</button>&nbsp;&nbsp;&nbsp;
+<div *ngFor="let perfume of perfumes">
+  <h2>{{ perfume.name | uppercase }}</h2>
+  <p>Brand: {{ perfume.brand | uppercase }}</p>
+  <p>Release Date: {{ perfume.releaseDate | date:'fullDate' }}</p>
+  <p>Price: {{ perfume.price | currency:'USD':true }}</p>
+  <p>Description: {{ perfume.description }}</p>
+  <button (click)="editPerfume(perfume)">Edit</button>
   <button (click)="deletePerfume(perfume.id)">Delete</button>
 </div>

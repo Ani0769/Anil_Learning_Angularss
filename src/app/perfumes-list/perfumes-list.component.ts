@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Perfumes } from "../Shared/perfumes";
-import {PerfumesListItemComponent } from "../perfumes-list-item/perfumes-list-item.component";
-import { NgForOf } from "@angular/common";
-import { PerfumeService } from "../service/perfume.service";
+import { PerfumesListItemComponent } from "../perfumes-list-item/perfumes-list-item.component";
 import { CommonModule } from "@angular/common";
+import { PerfumeService } from "../service/perfume.service";
 import { Router } from "@angular/router";
 
 @Component({
-  imports: [PerfumesListItemComponent, NgForOf],
   selector: 'app-perfumes-list',
   standalone: true,
-  styleUrl: './perfumes-list.component.css',
-  templateUrl: './perfumes-list.component.html'
+  styleUrls: ['./perfumes-list.component.css'],  // Fixed plural form of styleUrls
+  templateUrl: './perfumes-list.component.html',
+  imports: [PerfumesListItemComponent, CommonModule],  // Import CommonModule
 })
 
-export class PerfumesListComponent implements OnInit{
+export class PerfumesListComponent implements OnInit {
 
   perfumes: Perfumes[] = [];
   selectedPerfumes?: Perfumes;
+
   constructor(
     private perfumeService: PerfumeService,
     private router: Router
@@ -34,14 +34,12 @@ export class PerfumesListComponent implements OnInit{
   }
 
   editPerfume(perfume: Perfumes): void {
-     this.router.navigate(['/modify-list-item'], { queryParams: { id: perfume.id } });
-}
+    this.router.navigate(['/modify-list-item'], { queryParams: { id: perfume.id } });
+  }
 
   deletePerfume(id: number): void {
     this.perfumeService.removePerfumeById(id).subscribe(() => {
       this.loadPerfumes();
-
     });
   }
-
 }

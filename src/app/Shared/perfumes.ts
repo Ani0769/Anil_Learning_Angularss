@@ -6,5 +6,5 @@ export interface Perfumes {
   description:string;
   available: boolean;
   imgSrc:string;
-
+  releaseDate: string;
 }
